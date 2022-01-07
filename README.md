@@ -27,9 +27,40 @@ According to our implementation, we first display the pieces of circle in a rand
 
 This layer in our system can be seen as follows:
 
-![Demo Video](https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/segmented.gif)
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/segmented.gif" alt="animated" width=400 height=200>
+</p>
 
 ### 2: Password Image Authentication:
+For this layer, we took inspiration from Meezan Bank’s authentication system. Whenever a user registers, he/she is asked to select an image category from the 3 given categories:
+-	Cat
+-	Mouse
+-	Flower
+
+Whatever the user selects, is associated with his/her password and every time the user logs in, he/she will be asked to select the same image from the randomly displayed images.
+
+Now here’s the twist. We have stored multiple images for each category. So, if a user selects cat, he/she will not be displayed the same cat every single time. The images per category are different as can be seen below.
+#### a) Cat:
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/cat.png" width=300 height=100>
+</p>
+
+#### b) Mouse:
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/mouse.png" width=300 height=100>
+</p>
+
+#### c) Flower:
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/flower.png" width=300 height=100>
+</p>
+
+According to our implementation, we have stored 3 categories i.e., cat, mouse, flower in our database. Whatever the user has selected while registering has been stored into the database along with his password. Each category has 3 different versions named 0, 1, 2. At the start of the program, a random number is generated between 0 and 2. Whatever the number is, is the picture of each category that is to be displayed. This is to just add a bit more complexity to the code. Let’s say a user has selected image 1 of cat. Upon authentication he may be shown image 0 of cat (which will be a different cat) but the key thing is that it will be a cat and the user must select it in order to be authenticated. 
+
+This layer in our system can be seen as follows:
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/login.gif" alt="animated" width=400 height=200>
+</p>
 
 ### 3: Obscure Image Authentication:
 
