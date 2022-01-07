@@ -1,0 +1,5 @@
+garbled1 future
+garbled2 accent
+garbled3 risk
+garbled4 rumor
+garbled5 serious
