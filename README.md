@@ -5,7 +5,7 @@
 </p>
 
 ## Description:
-For this project, we designed a Graphical Password Authentication System. This is used to increase the protection/security of a website. Our system is divided into further 4 layers of protection. Each layer is totally different and diverse than the others. This not only increases protection, but also makes sure that no non-human can log in to your account using different activities such as Brute Force Algorithm and so on. The motivation for this project came from a recent attack named Pegasus in which people had their mobile phones compromised for almost a decade without them ever getting the slightest clue. This motivated us to build a stronger authentication system that generates randomized methods which could weaken the attack and eventually prevent it. The 4 layers of Protection that we are using are as follows:
+For this project, we designed a Graphical Password Authentication System. This is used to increase the protection/security of a website. Our system is divided into further 4 layers of protection. Each layer is totally different and diverse than the others. This not only increases protection, but also makes sure that no non-human can log in to your account using different activities such as Brute Force Algorithm and so on. The motivation for this project came from a recent attack named **Pegasus** in which people had their mobile phones compromised for almost a decade without them ever getting the slightest clue. This motivated us to build a stronger authentication system that generates randomized methods which could weaken the attack and eventually prevent it. The 4 layers of Protection that we are using are as follows:
 1.	Segmented Images Authentication
 2.	Password Image Authentication
 3.	Obscured Images Authentication
@@ -63,18 +63,67 @@ This layer in our system can be seen as follows:
 </p>
 
 ### 3: Obscure Image Authentication:
+This is one of the most interesting layers. In this layer, not only are we preventing bots but we are also enhancing security by introducing image-to-speech-to-text concept. Let’s dig deeper into what this concept really is.
+
+#### Image-to-Speech-to-Text:
+In this concept, a user is displayed an image with obscure text. The reason for adding this obscurity is to confuse a NLP or OCR type mechanisms in bypassing the authentication. Random words are generated on a file which is then covered with an obscure text. 
+
+For example:
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/obscure.jpg" width=300 height=100>
+</p>
+
+This picture is then displayed to the user and user is asked to speak the words in the given image. Now, here a trained model will give false results as it wouldn’t know which text to read whereas a human can do so. 
+
+Then the user will speak the text in correct order which our system will then convert to text and verify if the user spoke correct text. If verified, the user will be granted access. 
+
+For this feature, we are using **“Speech Recognition”** module of Python. User will be displayed the obscure text image and there will be a microphone button. When user will click the button, the recording will start and user will be asked to say the words in the image. When user says all the words, he/she must say **stop** in order for the program to stop recording. Then all the speech will be converted into individual words and stored in each index of an array. This array will then be compared to the expected output array. If both the arrays match, then the user will be authenticated.
+
+This module can be installed using: ***pip install speechrecognition***
+
+This layer in our system can be seen as follows:
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/obscure.gif" alt="animated" width=400 height=200>
+</p>
 
 ### 4: Garbled Image Authentication:
+The last and the most difficult layer is the garbled text authentication. In this layer, the user will be displayed a Garbled text whose readability will be really low and user will be asked to read and then type in the text. The garbled texts will be randomly generated as follows:
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/garbled.png" width=200 height=300>
+</p>
+For this layer, we have generated multiple garbled text images and stored the correct value of each image in a file. User is shown a random image in the start of this layer and is asked to type in the correct text. Whatever the user types is then compared to the already stored correct values and if the answer is correct, then user will be authenticated and authentication dialogue box will pop up.
+
+This layer in our system can be seen as follows:
+<p align="center">
+  <img src="https://github.com/HxnDev/Graphical-Password-Authentication-System/blob/main/Extras/garbled.gif" alt="animated" width=400 height=200>
+</p>
 
 ## Security Analysis:
+Following is the detailed security analysis of our system:
 
 ### 1: Issues Covered:
+The majority of applications/websites use text-based passwords to authenticate a user, with the additional use of CAPTCHA to verify that the user is a human. Unfortunately, this is not very secure and leaves the system vulnerable to different sorts of attacks. While text-based passwords sound secure in theory, in practice most users will end up making simple, common passwords that are frequently repeated across different applications or accounts. Bot attacks or hackers can take advantage of this and launch dictionary attacks, try to brute force the password or employ other ways to compromise user accounts.
 
 ### 2: Security Strengths:
+Graphical passwords are a more secure alternative to standard text-based passwords, especially as they don’t significantly lower usability. Using graphical password authentication, we can avoid the problem of keystroke logging, and be protected against dictionary attacks and social engineering. This technique for user authentication also requires human interaction on part of the user, which doubles as verifying the user was a human without having to make use of CAPTCHA (which is infamously annoying for users.) There will be several security layers, and the system will be customizable i.e., you can choose the types of security you want, depending on your security requirements.
 
 ### 3: Security Weaknesses:
+There are no major security vulnerabilities. However, our system is limited in scope so there are very small number of options for each module. Such as garbled text has a limited number of pictures to be chosen randomly from. This is not an inherent weakness of the system, as on a larger scale it could be adapted to generate or segment images dynamically and so on. But in the current state of the system, it would be possible for a computer to eventually brute force its way to the solution. 
 
+## Contributors:
+In the end, I'd like to mention my group members who helped me alot in this project. You can find them at:
 
-## Demo Video:
+[Sana Khan](https://github.com/sanaa-khan)
 
-![Alt Text](https://github.com/HxnDev/HospitalAid/blob/main/Features/Fainting%20Detection/Extras/fainting.gif)
+[Wajeeha Malik](https://github.com/wajeehamalik913)
+
+## 📫 Contact Me: 
+<p align="center">
+  <a href="http://www.hxndev.com/"><img src="https://img.icons8.com/bubbles/50/000000/web.png" alt="Website"/></a>
+	<a href="mailto:chhxnshah@gmail.com"><img src="https://img.icons8.com/bubbles/50/000000/gmail.png" alt="Gmail"/></a>
+	<a href="https://github.com/HxnDev"><img src="https://img.icons8.com/bubbles/50/000000/github.png" alt="GitHub"/></a>
+	<a href="https://www.linkedin.com/in/hassan-shahzad-2a6617212/"><img src="https://img.icons8.com/bubbles/50/000000/linkedin.png" alt="LinkedIn"/></a>
+	<a href="https://www.instagram.com/hxn_photography/?hl=en"><img src="https://img.icons8.com/bubbles/50/000000/instagram.png" alt="Instagram"/></a>
+	
+</p>
+
